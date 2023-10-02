@@ -93,11 +93,12 @@ for move in moves:
 ```
 3. 뽑은 것이 basket 제일 위에 있는 것과 같으면 basket 원소 뽑고 count에 2 더하기
 ```py
-if basket[-1] == basket[-2]:
-        basket.pop(-1)
-        bakset.pop(-1)
-        count += 2
-
+if len(basket) > 1
+        if basket[-1] == basket[-2]:
+                basket.pop(-1)
+                bakset.pop(-1)
+                count += 2
+break
 ```
 
 <br/>
