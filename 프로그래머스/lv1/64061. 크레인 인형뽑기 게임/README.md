@@ -1,5 +1,7 @@
 # [level 1] 크레인 인형뽑기 게임 - 64061 
 
+[해설](#)
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/64061?language=python3) 
 
 ### 성능 요약
@@ -70,5 +72,33 @@
 
 <p><img src="https://grepp-programmers.s3.ap-northeast-2.amazonaws.com/files/production/bb0f59c7-6b72-485a-8302-217fe53ea88f/crane_game_104.jpg" title="" alt="crane_game_104.jpg"></p>
 
+***
+### 해설
+<p><img src="https://github.com/junRepository/programmers/assets/97268718/d9849f06-052c-43c9-84df-c9a4bf38a2b0" width="70%"></p>
 
+1. input은 row 형태이므로 moves의 형태인 column으로 찾아야한다.<br/>
+```py
+for move in moves:
+        for j in range(len(board)):
+                board[j][move-1]
+```
+2. 0이 아닌 것을 뽑아 basket으로 보내고 해당 위치는 0으로 변경
+```py
+for move in moves:
+        for j in range(len(board)):
+                if board[j][move-1] != 0:
+                        basket.append(board[j][move-1])
+                        board[j][move-1] = 0
+
+```
+3. 뽑은 것이 basket 제일 위에 있는 것과 같으면 basket 원소 뽑고 count에 2 더하기
+```py
+if basket[-1] == basket[-2]:
+        basket.pop(-1)
+        bakset.pop(-1)
+        count += 2
+
+```
+
+<br/>
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
